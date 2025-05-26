@@ -106,16 +106,16 @@ void Binarization(BYTE* Img, BYTE* Out, int W, int H, BYTE Threshold)
 //}
 
 
-void AverageConv(BYTE* Img, BYTE* Out, int W, int H) // ¹Ú½ºÆòÈ°È­
+void AverageConv(BYTE* Img, BYTE* Out, int W, int H) // ë°•ìŠ¤í‰í™œí™”
 {
 	double Kernel[3][3] = { 0.11111, 0.11111, 0.11111,
 										0.11111, 0.11111, 0.11111,
 										0.11111, 0.11111, 0.11111 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -125,16 +125,16 @@ void AverageConv(BYTE* Img, BYTE* Out, int W, int H) // ¹Ú½ºÆòÈ°È­
 	}
 }
 
-void GaussAvrConv(BYTE* Img, BYTE* Out, int W, int H) // °¡¿ì½Ã¾ÈÆòÈ°È­
+void GaussAvrConv(BYTE* Img, BYTE* Out, int W, int H) // ê°€ìš°ì‹œì•ˆí‰í™œí™”
 {
 	double Kernel[3][3] = { 0.0625, 0.125, 0.0625,
 										0.125, 0.25, 0.125,
 										0.0625, 0.125, 0.0625 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -144,16 +144,16 @@ void GaussAvrConv(BYTE* Img, BYTE* Out, int W, int H) // °¡¿ì½Ã¾ÈÆòÈ°È­
 	}
 }
 
-void Prewitt_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Prewitt_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, 0.0, 1.0,
 										-1.0, 0.0, 1.0,
 										-1.0, 0.0, 1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -164,16 +164,16 @@ void Prewitt_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
 	}
 }
 
-void Prewitt_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Prewitt_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, -1.0, -1.0,
 										0.0, 0.0, 0.0,
 										1.0, 1.0, 1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -184,16 +184,16 @@ void Prewitt_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
 	}
 }
 
-void Sobel_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Sobel_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, 0.0, 1.0,
 										-2.0, 0.0, 2.0,
 										-1.0, 0.0, 1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -204,16 +204,16 @@ void Sobel_X_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
 	}
 }
 
-void Sobel_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Sobel_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, -2.0, -1.0,
 										0.0, 0.0, 0.0,
 										1.0, 2.0, 1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -224,16 +224,16 @@ void Sobel_Y_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
 	}
 }
 
-void Laplace_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Laplace_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, -1.0, -1.0,
 										-1.0, 8.0, -1.0,
 										-1.0, -1.0, -1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -244,16 +244,16 @@ void Laplace_Conv(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
 	}
 }
 
-void Laplace_Conv_DC(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ¸¶½ºÅ© X
+void Laplace_Conv_DC(BYTE* Img, BYTE* Out, int W, int H) // Prewitt ë§ˆìŠ¤í¬ X
 {
 	double Kernel[3][3] = { -1.0, -1.0, -1.0,
 										-1.0, 9.0, -1.0,
 										-1.0, -1.0, -1.0 };
 	double SumProduct = 0.0;
-	for (int i = 1; i < H - 1; i++) { // YÁÂÇ¥ (Çà)
-		for (int j = 1; j < W - 1; j++) { // XÁÂÇ¥ (¿­)
-			for (int m = -1; m <= 1; m++) { // Kernel Çà
-				for (int n = -1; n <= 1; n++) { // Kernel ¿­
+	for (int i = 1; i < H - 1; i++) { // Yì¢Œí‘œ (í–‰)
+		for (int j = 1; j < W - 1; j++) { // Xì¢Œí‘œ (ì—´)
+			for (int m = -1; m <= 1; m++) { // Kernel í–‰
+				for (int n = -1; n <= 1; n++) { // Kernel ì—´
 					SumProduct += Img[(i + m) * W + (j + n)] * Kernel[m + 1][n + 1];
 				}
 			}
@@ -299,11 +299,11 @@ void swap(BYTE* a, BYTE* b)
 
 BYTE Median(BYTE* arr, int size)
 {
-	// ¿À¸§Â÷¼ø Á¤·Ä
+	// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 	const int S = size;
 	for (int i = 0; i < size - 1; i++) // pivot index
 	{
-		for (int j = i + 1; j < size; j++) // ºñ±³´ë»ó index
+		for (int j = i + 1; j < size; j++) // ë¹„êµëŒ€ìƒ index
 		{
 			if (arr[i] > arr[j]) 	swap(&arr[i], &arr[j]);
 		}
@@ -313,11 +313,11 @@ BYTE Median(BYTE* arr, int size)
 
 BYTE MaxPooling(BYTE* arr, int size)
 {
-	// ¿À¸§Â÷¼ø Á¤·Ä
+	// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 	const int S = size;
 	for (int i = 0; i < size - 1; i++) // pivot index
 	{
-		for (int j = i + 1; j < size; j++) // ºñ±³´ë»ó index
+		for (int j = i + 1; j < size; j++) // ë¹„êµëŒ€ìƒ index
 		{
 			if (arr[i] > arr[j]) 	swap(&arr[i], &arr[j]);
 		}
@@ -327,11 +327,11 @@ BYTE MaxPooling(BYTE* arr, int size)
 
 BYTE MinPooling(BYTE* arr, int size)
 {
-	// ¿À¸§Â÷¼ø Á¤·Ä
+	// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 	const int S = size;
 	for (int i = 0; i < size - 1; i++) // pivot index
 	{
-		for (int j = i + 1; j < size; j++) // ºñ±³´ë»ó index
+		for (int j = i + 1; j < size; j++) // ë¹„êµëŒ€ìƒ index
 		{
 			if (arr[i] > arr[j]) 	swap(&arr[i], &arr[j]);
 		}
@@ -341,19 +341,19 @@ BYTE MinPooling(BYTE* arr, int size)
 
 
 /*
-7ÁÖÂ÷ ÀÔ´Ï´Ù!
+7ì£¼ì°¨ ìž…ë‹ˆë‹¤!
 
-¶óº§¸µÀ» ¹è¿öº¼°Ô¿ä
+ë¼ë²¨ë§ì„ ë°°ì›Œë³¼ê²Œìš”
 
-¶óº§¸µÀÌ¶õ?
-¿µ»óÀ» ÀÌÁøÈ­ÇÏ°í
-ÀÌÁøÈ­µÈ ¿µ»óÀ» °¡Áö°í
-ÇØ´ç ¿µ»óÀÇ Àü°æ¿¡ ÇØ´çµÇ´Â ¿µ¿ªµéÀ»
-µ¢¾î¸®Áø ´ÜÀ§·Î (ÄÁÆ÷³ÍÆ® == ¹­À½) ¾ÆÀÌµ§Æ¼Æ¼ ºÎ¿©
+ë¼ë²¨ë§ì´ëž€?
+ì˜ìƒì„ ì´ì§„í™”í•˜ê³ 
+ì´ì§„í™”ëœ ì˜ìƒì„ ê°€ì§€ê³ 
+í•´ë‹¹ ì˜ìƒì˜ ì „ê²½ì— í•´ë‹¹ë˜ëŠ” ì˜ì—­ë“¤ì„
+ë©ì–´ë¦¬ì§„ ë‹¨ìœ„ë¡œ (ì»¨í¬ë„ŒíŠ¸ == ë¬¶ìŒ) ì•„ì´ë´í‹°í‹° ë¶€ì—¬
 */
 
 /*
-¶óº§¸µ¸¸ ÇÏ´Â°Ô ¾Æ´Ï¶ó °¡Àå Å« ÄÄÆÛ³ÍÆ®¸¸ »Ì¾Æ¼­ Ãâ·ÂÇÏ´Â µ¿ÀÛÀÌ¾ß
+ë¼ë²¨ë§ë§Œ í•˜ëŠ”ê²Œ ì•„ë‹ˆë¼ ê°€ìž¥ í° ì»´í¼ë„ŒíŠ¸ë§Œ ë½‘ì•„ì„œ ì¶œë ¥í•˜ëŠ” ë™ìž‘ì´ì•¼
 */
 
 
@@ -376,8 +376,8 @@ int pop(short* stackx, short* stacky, short* vx, short* vy, int* top)
 }
 
 
-// GlassFire ¾Ë°í¸®ÁòÀ» ÀÌ¿ëÇÑ ¶óº§¸µ ÇÔ¼ö
-// ÀÌ°Ô º» ÄÚµåÀÎµ¥ ¿©±â¼­ push¶û popÀ» »ç¿ëÇÕ´Ï´Ù
+// GlassFire ì•Œê³ ë¦¬ì¦˜ì„ ì´ìš©í•œ ë¼ë²¨ë§ í•¨ìˆ˜
+// ì´ê²Œ ë³¸ ì½”ë“œì¸ë° ì—¬ê¸°ì„œ pushëž‘ popì„ ì‚¬ìš©í•©ë‹ˆë‹¤
 void m_BlobColoring(BYTE* CutImage, int height, int width)
 {
 	int i, j, m, n, top, area, Out_Area, index, BlobArea[1000];
@@ -386,31 +386,31 @@ void m_BlobColoring(BYTE* CutImage, int height, int width)
 	//	BYTE** CutImage2;
 	Out_Area = 1;
 
-	// ½ºÅÃÀ¸·Î »ç¿ëÇÒ ¸Þ¸ð¸® ÇÒ´ç
+	// ìŠ¤íƒìœ¼ë¡œ ì‚¬ìš©í•  ë©”ëª¨ë¦¬ í• ë‹¹
 	short* stackx = new short[height * width];
 	short* stacky = new short[height * width];
 	short* coloring = new short[height * width];
 
 	int arr_size = height * width;
 
-	// ¶óº§¸µµÈ ÇÈ¼¿À» ÀúÀåÇÏ±â À§ÇØ ¸Þ¸ð¸® ÇÒ´ç
+	// ë¼ë²¨ë§ëœ í”½ì…€ì„ ì €ìž¥í•˜ê¸° ìœ„í•´ ë©”ëª¨ë¦¬ í• ë‹¹
 
 	for (k = 0; k < height * width; k++)
 	{
 		coloring[k] = 0;
 	}
-	// ¸Þ¸ð¸® ÃÊ±âÈ­
+	// ë©”ëª¨ë¦¬ ì´ˆê¸°í™”
 
 	for (i = 0; i < height; i++)
 	{
-		index = i * width; // º° ÀÇ¹Ì ¾øÀ½ ±ÍÂú¾Æ¼­ ºÙÀÎ °Å
+		index = i * width; // ë³„ ì˜ë¯¸ ì—†ìŒ ê·€ì°®ì•„ì„œ ë¶™ì¸ ê±°
 
 
 		for (j = 0; j < width; j++)
 		{
-			// ÀÌ¹Ì ¹æ¹®ÇÑ Á¡ÀÌ°Å³ª ÇÈ¼¿°ªÀÌ 255°¡ ¾Æ´Ï¶ó¸é Ã³¸® ¾ÈÇÔ
+			// ì´ë¯¸ ë°©ë¬¸í•œ ì ì´ê±°ë‚˜ í”½ì…€ê°’ì´ 255ê°€ ì•„ë‹ˆë¼ë©´ ì²˜ë¦¬ ì•ˆí•¨
 			if (coloring[index + j] != 0 || CutImage[index + j] != 255) continue;
-			//while¹® ¾È¿¡¼­ continue --> ±× ´ÙÀ½ ¹®ÀåÀº ½ÃÇàÇÏÁö ¾Ê°í ´ÙÀ½ ¹Ýº¹(Á¶°Ç)À¸·Î ³Ñ¾î°¡!
+			//whileë¬¸ ì•ˆì—ì„œ continue --> ê·¸ ë‹¤ìŒ ë¬¸ìž¥ì€ ì‹œí–‰í•˜ì§€ ì•Šê³  ë‹¤ìŒ ë°˜ë³µ(ì¡°ê±´)ìœ¼ë¡œ ë„˜ì–´ê°€!
 
 			r = i; c = j; top = 0; area = 1;
 			curColor++;
@@ -418,27 +418,27 @@ void m_BlobColoring(BYTE* CutImage, int height, int width)
 			while (1)
 			{
 			GRASSFIRE:
-				//8¹æÇâ ÇÈ¼¿ È®ÀÎ
-				// °ü½É ÇÈ¼¿¸¸ ÇÑ ¹ø È®ÀÎÇØº¼°Ô!
+				//8ë°©í–¥ í”½ì…€ í™•ì¸
+				// ê´€ì‹¬ í”½ì…€ë§Œ í•œ ë²ˆ í™•ì¸í•´ë³¼ê²Œ!
 				for (m = r - 1; m <= r + 1; m++)
 				{
 					index = m * width;
 					for (n = c - 1; n <= c + 1; n++)
 					{
-						//°ü½É ÇÈ¼¿ÀÌ ¿µ»ó°æ°è¸¦ ¹þ¾î³ª¸é Ã³¸® ¾ÈÇÔ
+						//ê´€ì‹¬ í”½ì…€ì´ ì˜ìƒê²½ê³„ë¥¼ ë²—ì–´ë‚˜ë©´ ì²˜ë¦¬ ì•ˆí•¨
 						if (m < 0 || m >= height || n < 0 || n >= width) continue;
 
 						/*if ((int)CutImage[index + n] == 255 && coloring[index + n] == 0) {
 							coloring[index + n] = curColor;
-							ÇØ´ç ÇÈ¼¿ÀÌ °´Ã¼(255)ÀÌ°í ¾ÆÁ÷ ¹æ¹® ÀüÀÌ¸é
+							í•´ë‹¹ í”½ì…€ì´ ê°ì²´(255)ì´ê³  ì•„ì§ ë°©ë¬¸ ì „ì´ë©´
 
-								ÇöÀç ¶óº§ ¹øÈ£(curColor)·Î ¸¶Å·
+								í˜„ìž¬ ë¼ë²¨ ë²ˆí˜¸(curColor)ë¡œ ë§ˆí‚¹
 						*/
 
-						//¾ÆÁ÷ ¸ÊÇÎ ¾È µÈ °Å¸é(coloring¿¡ ÇØ´ç ÀÎµ¦½º °ªÀÌ 0À¸·Î ÃÊ±âÈ­µÇ¾îÀÖÀ¸¸é), ±×¸®°í 255°¡ Áö±Ý ÁÖº¯ È­¼ÒÀÎ°Å¾ß ÁÖº¯ È­¼Ò´Â Èò»öÀÌ¿©¾ßÁö!
+						//ì•„ì§ ë§µí•‘ ì•ˆ ëœ ê±°ë©´(coloringì— í•´ë‹¹ ì¸ë±ìŠ¤ ê°’ì´ 0ìœ¼ë¡œ ì´ˆê¸°í™”ë˜ì–´ìžˆìœ¼ë©´), ê·¸ë¦¬ê³  255ê°€ ì§€ê¸ˆ ì£¼ë³€ í™”ì†Œì¸ê±°ì•¼ ì£¼ë³€ í™”ì†ŒëŠ” í°ìƒ‰ì´ì—¬ì•¼ì§€!
 						if ((int)CutImage[index + n] == 255 && coloring[index + n] == 0)
 						{
-							coloring[index + n] = curColor; // ÇöÀç ¶óº§·Î ¸¶Å©
+							coloring[index + n] = curColor; // í˜„ìž¬ ë¼ë²¨ë¡œ ë§ˆí¬
 							if (push(stackx, stacky, arr_size, (short)m, (short)n, &top) == -1) continue;
 							r = m; c = n; area++;
 							goto GRASSFIRE;
@@ -452,51 +452,51 @@ void m_BlobColoring(BYTE* CutImage, int height, int width)
 	}
 
 	float grayGap = 255.0f / (float)curColor;
-	//curColor : ÃÑ ÄÁÆÛ·±Æ®ÀÇ °¹¼ö -> ¾ó¸¸Å­ÀÇ °ªÀ¸·Î ´ÙÀ½ ¶óº§¸µ°ªÀÇ ¹à±â¸¦ Áõ°¡½ÃÅ³ °Ç°¡
+	//curColor : ì´ ì»¨í¼ëŸ°íŠ¸ì˜ ê°¯ìˆ˜ -> ì–¼ë§Œí¼ì˜ ê°’ìœ¼ë¡œ ë‹¤ìŒ ë¼ë²¨ë§ê°’ì˜ ë°ê¸°ë¥¼ ì¦ê°€ì‹œí‚¬ ê±´ê°€
 
-	// °¡Àå ¸éÀûÀÌ ³ÐÀº ¿µ¿ªÀ» Ã£¾Æ³»±â À§ÇÔ 
-	// Á¶»ç½ÄÀ» ÀÌ¿ëÇÏ¿© ¾î¶² °ªÀ» °®´ÂÁö ¾Ë ¼ö ÀÖ¾î!
+	// ê°€ìž¥ ë©´ì ì´ ë„“ì€ ì˜ì—­ì„ ì°¾ì•„ë‚´ê¸° ìœ„í•¨ 
+	// ì¡°ì‚¬ì‹ì„ ì´ìš©í•˜ì—¬ ì–´ë–¤ ê°’ì„ ê°–ëŠ”ì§€ ì•Œ ìˆ˜ ìžˆì–´!
 	for (i = 1; i <= curColor; i++)
 	{
 		if (BlobArea[i] >= BlobArea[Out_Area]) Out_Area = i;
-		//°¡Àå ³ÐÀº °ªÀ» Ã£À» °Í (Å©±â°¡ Å« °Í)
-		// out_area´Â ±âº»°ªÀÌ 1ÀÌ´Ù 
-		// ´ÙÀ½ ÀÎµ¦½º ºÎºÐÀÌ ´õ Å©´Ù? ±×·³ ¾÷µ¥ÀÌÆ®
-		// ±×·¡¼­ ÃÖÁ¾ÀûÀ¸·Î´Â °¡Àå ³ÐÀº °ÍÀ¸·Î ÀúÀåµÇ¾î ÀÖ´Â °É ÀúÀåÇÏ°Ô µÅ
-		//°¢ ÄÄÆÛ³ÍÆ®º° Æ¯Â¡ ex) ¾î´ÀÁ¤µµ ÇÈ¼¿ Å©±â¸¦ °¡Áö´ÂÁö,¾ó¸¸Å­ ¹­À½ÀÌ ÀÖ´ÂÁö (ÄÄÆ÷³ÍÆ® °¹¼ö)
+		//ê°€ìž¥ ë„“ì€ ê°’ì„ ì°¾ì„ ê²ƒ (í¬ê¸°ê°€ í° ê²ƒ)
+		// out_areaëŠ” ê¸°ë³¸ê°’ì´ 1ì´ë‹¤ 
+		// ë‹¤ìŒ ì¸ë±ìŠ¤ ë¶€ë¶„ì´ ë” í¬ë‹¤? ê·¸ëŸ¼ ì—…ë°ì´íŠ¸
+		// ê·¸ëž˜ì„œ ìµœì¢…ì ìœ¼ë¡œëŠ” ê°€ìž¥ ë„“ì€ ê²ƒìœ¼ë¡œ ì €ìž¥ë˜ì–´ ìžˆëŠ” ê±¸ ì €ìž¥í•˜ê²Œ ë¼
+		//ê° ì»´í¼ë„ŒíŠ¸ë³„ íŠ¹ì§• ex) ì–´ëŠì •ë„ í”½ì…€ í¬ê¸°ë¥¼ ê°€ì§€ëŠ”ì§€,ì–¼ë§Œí¼ ë¬¶ìŒì´ ìžˆëŠ”ì§€ (ì»´í¬ë„ŒíŠ¸ ê°¯ìˆ˜)
 	}
 
-	// CutImage ¹è¿­ Å¬¸®¾î~
-	// ¿©±â cutImage°¡ mainÇÔ¼ö¿¡¼­ output, ±×·¯´Ï±î ÀÔ·ÂÀ¸·Î ³ÖÀº °ÅÀÓ
-	// ÀÔ·ÂÀ¸·Î ³ÖÀº ÆÄÀÏÀ» Ãâ·ÂÀ¸·Îµµ »ÌÀ» ¿¹Á¤
+	// CutImage ë°°ì—´ í´ë¦¬ì–´~
+	// ì—¬ê¸° cutImageê°€ mainí•¨ìˆ˜ì—ì„œ output, ê·¸ëŸ¬ë‹ˆê¹Œ ìž…ë ¥ìœ¼ë¡œ ë„£ì€ ê±°ìž„
+	// ìž…ë ¥ìœ¼ë¡œ ë„£ì€ íŒŒì¼ì„ ì¶œë ¥ìœ¼ë¡œë„ ë½‘ì„ ì˜ˆì •
 
 	for (k = 0; k < width * height; k++)
 	{
 		CutImage[k] = 255;
 	}
 
-	// coloring¿¡ ÀúÀåµÈ ¶óº§¸µ °á°úÁß (Out_Area¿¡ ÀúÀåµÈ) ¿µ¿ªÀÌ °¡Àå Å« °Í¸¸ CutImage¿¡ ÀúÀå
+	// coloringì— ì €ìž¥ëœ ë¼ë²¨ë§ ê²°ê³¼ì¤‘ (Out_Areaì— ì €ìž¥ëœ) ì˜ì—­ì´ ê°€ìž¥ í° ê²ƒë§Œ CutImageì— ì €ìž¥
 	for (k = 0; k < width * height; k++)
 	{
-		//ÇØ´ç °ª¸¸ Ã¤¿ì°Ú´Ù (°ËÁ¤»öÀ¸·Î)
-		if (coloring[k] == Out_Area) CutImage[k] = 0;  // °¡Àå Å« °Í¸¸ ÀúÀå (= 'size filtering ÇÑ´Ù')
+		//í•´ë‹¹ ê°’ë§Œ ì±„ìš°ê² ë‹¤ (ê²€ì •ìƒ‰ìœ¼ë¡œ)
+		if (coloring[k] == Out_Area) CutImage[k] = 0;  // ê°€ìž¥ í° ê²ƒë§Œ ì €ìž¥ (= 'size filtering í•œë‹¤')
 
-		//if (BlobArea[coloring[k]] > 500) CutImage[k] = 0;  // Æ¯Á¤ ¸éÀûÀÌ»óµÇ´Â ¿µ¿ª¸¸ Ãâ·Â
-		//CutImage[k] = (unsigned char)(coloring[k] * grayGap); //¶óº§¸µµÈ °á°ú ±×´ë·Î Ãâ·Â
+		//if (BlobArea[coloring[k]] > 500) CutImage[k] = 0;  // íŠ¹ì • ë©´ì ì´ìƒë˜ëŠ” ì˜ì—­ë§Œ ì¶œë ¥
+		//CutImage[k] = (unsigned char)(coloring[k] * grayGap); //ë¼ë²¨ë§ëœ ê²°ê³¼ ê·¸ëŒ€ë¡œ ì¶œë ¥
 	}
 
 	delete[] coloring;
 	delete[] stackx;
 	delete[] stacky;
 }
-// ¶óº§¸µ ÈÄ °¡Àå ³ÐÀº ¿µ¿ª¿¡ ´ëÇØ¼­¸¸ »Ì¾Æ³»´Â ÄÚµå Æ÷ÇÔ
+// ë¼ë²¨ë§ í›„ ê°€ìž¥ ë„“ì€ ì˜ì—­ì— ëŒ€í•´ì„œë§Œ ë½‘ì•„ë‚´ëŠ” ì½”ë“œ í¬í•¨
 
 
 void BinaryImageEdgeDetection(BYTE* Bin, BYTE* Out, int W, int H)
 
 {
 
-	// °æ°è °ËÃâ ÄÚµå
+	// ê²½ê³„ ê²€ì¶œ ì½”ë“œ
 	for (int i = 0; i < W; i++)
 	{
 		Out[i] = Bin[i];
@@ -506,16 +506,16 @@ void BinaryImageEdgeDetection(BYTE* Bin, BYTE* Out, int W, int H)
 	{
 		for (int j = 0; j < W; j++)
 		{
-			//°æ°è Ã£±â
+			//ê²½ê³„ ì°¾ê¸°
 
-			//Àü°æÈ­¼Ò¶ó¸é
+			//ì „ê²½í™”ì†Œë¼ë©´
 			if (Bin[i * W + j] == 0)
 			{
-				//ÁÖº¯ÀÌ ¸ðµÎ 0ÀÌ¸é ¾Æ´Ñ °Ç°¡? ¾Æ ¸Â´Ù ÇÏ³ª¶óµµ ÀÖÀ¸¸é °æ°è°ªÀÌ´Ï±î
+				//ì£¼ë³€ì´ ëª¨ë‘ 0ì´ë©´ ì•„ë‹Œ ê±´ê°€? ì•„ ë§žë‹¤ í•˜ë‚˜ë¼ë„ ìžˆìœ¼ë©´ ê²½ê³„ê°’ì´ë‹ˆê¹Œ
 				if (!(Bin[(i - 1) * W + j] == 0 && Bin[(i + 1) * W + j] == 0 && Bin[i * W + j - 1] == 0 && Bin[i * W + (j + 1)] == 0))
 				{
-					// notÀ» ºÙ¿´À¸´Ï±î 4¹æÇâÁß ÇÏ³ª¶óµµ Àü°æÀÌ ¾Æ´Ñ°Ô ÀÖµû¸é!
-					// ==>> ¿ì¸®°¡ Ã£°í ÀÖ´Â °Å!!
+					// notì„ ë¶™ì˜€ìœ¼ë‹ˆê¹Œ 4ë°©í–¥ì¤‘ í•˜ë‚˜ë¼ë„ ì „ê²½ì´ ì•„ë‹Œê²Œ ìžˆë”°ë©´!
+					// ==>> ìš°ë¦¬ê°€ ì°¾ê³  ìžˆëŠ” ê±°!!
 					Out[i * W + j] = 255;
 				}
 			}
@@ -526,22 +526,22 @@ void BinaryImageEdgeDetection(BYTE* Bin, BYTE* Out, int W, int H)
 
 void FillColor(BYTE* Image, int X, int Y, int W, int H, BYTE R, BYTE G, BYTE B)
 {
-	//À§Ä¡¸¦ Æ¯Á¤ »ö»óÀ¸·Î ÁöÁ¤ÇØº¸±â
+	//ìœ„ì¹˜ë¥¼ íŠ¹ì • ìƒ‰ìƒìœ¼ë¡œ ì§€ì •í•´ë³´ê¸°
 
-	//¿µ»ó¿¡ µé¾î°£ °Ç BGR¼ø¼­ÀÓ!!
-	Image[Y * W * 3 + X * 3] = B; //BLUE ¼ººÐ
+	//ì˜ìƒì— ë“¤ì–´ê°„ ê±´ BGRìˆœì„œìž„!!
+	Image[Y * W * 3 + X * 3] = B; //BLUE ì„±ë¶„
 	Image[Y * W * 3 + X * 3 + 1] = G; //GREEN
 	Image[Y * W * 3 + X * 3 + 2] = R; //RED
-	//3°³ÀÇ °ªÀÌ °°À¸¸é gray scale °ª! -> ¹«Ã¤»ö!
+	//3ê°œì˜ ê°’ì´ ê°™ìœ¼ë©´ gray scale ê°’! -> ë¬´ì±„ìƒ‰!
 }
 
 
 
 int main()
 {
-	BITMAPFILEHEADER hf; // 14¹ÙÀÌÆ®
-	BITMAPINFOHEADER hInfo; // 40¹ÙÀÌÆ®
-	RGBQUAD hRGB[256]; // 1024¹ÙÀÌÆ®
+	BITMAPFILEHEADER hf; // 14ë°”ì´íŠ¸
+	BITMAPINFOHEADER hInfo; // 40ë°”ì´íŠ¸
+	RGBQUAD hRGB[256]; // 1024ë°”ì´íŠ¸
 	FILE* fp;
 	fp = fopen("HandP.bmp", "rb");
 	if (fp == NULL) {
@@ -559,16 +559,16 @@ int main()
 	BYTE* Output;
 
 
-	if (hInfo.biBitCount == 24) //Æ®·çÄÃ·¯
+	if (hInfo.biBitCount == 24) //íŠ¸ë£¨ì»¬ëŸ¬
 	{
-		// ¿©±â¼­´Â µ¿Àû ÇÒ´ç¿¡ *3¾¿ ´õ ÇØÁà¾ß°ÚÁö?
+		// ì—¬ê¸°ì„œëŠ” ë™ì  í• ë‹¹ì— *3ì”© ë” í•´ì¤˜ì•¼ê² ì§€?
 		Image = (BYTE*)malloc(ImgSize * 3);
 		//Temp = (BYTE*)malloc(ImgSize * 3);
 		Output = (BYTE*)malloc(ImgSize * 3);
 		fread(Image, sizeof(BYTE), ImgSize * 3, fp);
 	}
 
-	else  // ±×·¹ÀÌ (ÀÎµ¦½º)
+	else  // ê·¸ë ˆì´ (ì¸ë±ìŠ¤)
 	{
 		fread(hRGB, sizeof(RGBQUAD), 256, fp);
 		Image = (BYTE*)malloc(ImgSize);
@@ -578,7 +578,7 @@ int main()
 	}
 
 
-	// ÀÓ½Ã¹è¿­
+	// ìž„ì‹œë°°ì—´
 
 	fclose(fp);
 
@@ -603,8 +603,8 @@ int main()
 		}
 	}*/
 
-	////°¡·Î ¶ì ¸¸µé±â
-	//// ÃÊ±âÈ­
+	////ê°€ë¡œ ë  ë§Œë“¤ê¸°
+	//// ì´ˆê¸°í™”
 	//for (int i = 0; i < H; i++)
 	//{
 	//	for (int j = 0; j < W; j++)
@@ -614,7 +614,7 @@ int main()
 	//		Image[i * W * 3 + j * 3] = 0; //BLUE
 	//	}
 	//}
-	////y±âÁØ 0~239
+	////yê¸°ì¤€ 0~239
 	//for (int i = 0; i < 240; i++)
 	//{
 	//	for (int j = 0; j < W; j++)
@@ -622,7 +622,7 @@ int main()
 	//		Image[i * W * 3 + j * 3 + 2] = 255; //RED
 	//	}
 	//}
-	////y±âÁØ 120~359
+	////yê¸°ì¤€ 120~359
 	//for (int i = 120; i < 359; i++)
 	//{
 	//	for (int j = 0; j < W; j++)
@@ -630,7 +630,7 @@ int main()
 	//		Image[i * W * 3 + j * 3 + 1] = 255; //GREEN
 	//	}
 	//}
-	////y±âÁØ 240~479
+	////yê¸°ì¤€ 240~479
 	//for (int i = 240; i < 479; i++)
 	//{
 	//	for (int j = 0; j < W; j++)
@@ -639,7 +639,7 @@ int main()
 	//	}
 	//}
 
-	//±×¶óµ¥ÀÌ¼Ç ¸¸µé±â (B~R)
+	//ê·¸ë¼ë°ì´ì…˜ ë§Œë“¤ê¸° (B~R)
 	double wt;
 	for (int a = 0; a < 160; a++)
 	{
@@ -720,11 +720,11 @@ int main()
 	//}
 	/* Median filtering */
 	//AverageConv(Image, Output, hInfo.biWidth, hInfo.biHeight);
-	//ÀÌÁøÈ­
+	//ì´ì§„í™”
 	//Binarization(Image, Temp, hInfo.biWidth, hInfo.biHeight, 100);
-	//°¢±â ´Ù¸¥ ÄÄÆ÷³ÍÆ®´Â ´Ù¸¥ »öÀ¸·Î Ç¥½ÃÇÏ±â
+	//ê°ê¸° ë‹¤ë¥¸ ì»´í¬ë„ŒíŠ¸ëŠ” ë‹¤ë¥¸ ìƒ‰ìœ¼ë¡œ í‘œì‹œí•˜ê¸°
 	//m_BlobColoring(Temp, hInfo.biHeight, hInfo.biWidth);
-	//output¿¡ °á°ú ÀúÀå
+	//outputì— ê²°ê³¼ ì €ìž¥
 	//BinaryImageEdgeDetection(Temp,Output,W,H);
 
 
